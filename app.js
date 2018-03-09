@@ -49,7 +49,18 @@ app.get('/wholesale', (request, response) => {
 	    });
 
 });    
+app.get('/date', (request, response) => {
+	console.log('loading data');
+	Data.date().then((date)=>{
+		    console.log('fetched data');
+	    	response.json(date);
+		   	
 
+	    }).catch((err)=>{
+	    	console.log(err);
+	    });
+
+});  
 app.listen(port, () => {
 	console.log('Server Up and running on PORT', port);
 });

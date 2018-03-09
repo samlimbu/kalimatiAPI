@@ -6,7 +6,8 @@ import { KalimatiService } from '../services/kalimati.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    DATA=[];
+    DATA = [];
+    DATA1 = [];
   constructor(
     private kalimatiService: KalimatiService
 
@@ -19,9 +20,16 @@ export class HomeComponent implements OnInit {
   getData(){
       this.kalimatiService.getVegetablesfromService()
       .subscribe(
-          data=>console.log(data),
+          data=>{this.DATA = data,console.log(data)},
           err=>console.log(err),
           ()=> console.log(this.DATA)
     );
+    this.kalimatiService.getDataFromMLab()
+    .subscribe(
+        data=>{this.DATA1 = data},
+        err=>console.log(err),
+        ()=> console.log(this.DATA1)
+    );
   }
+ 
 }

@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+<div *ngIf="DATA1.length">
+    <h2>Retail price</h2>
+    <table>
+        <th>कृषि उपज</th>
+        <th>ईकाइ</th>
+        <th>न्यूनतम</th>
+        <th>अधिकतम</th>
+        <th>औसत</th>
+        <tr *ngFor="let item of DATA">
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+        </tr>
+    </table>
+</div>
