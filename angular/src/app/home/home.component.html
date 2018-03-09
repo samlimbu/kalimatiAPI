@@ -1,4 +1,5 @@
-<div *ngIf="DATA1.length">
+<div *ngIf="DATE_TIME && DATA.length">
+    
     <h2>Retail price</h2>
     <table>
         <th>कृषि उपज</th>
@@ -14,4 +15,7 @@
             <td>{{item[4]}}</td>
         </tr>
     </table>
+    <p>{{DATE_TIME.dateWR[1]}}</p>
+    <p>{{DATE_TIME.timeWR[1]}}</p>
 </div>
+

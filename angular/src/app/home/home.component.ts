@@ -7,29 +7,37 @@ import { KalimatiService } from '../services/kalimati.service';
 })
 export class HomeComponent implements OnInit {
     DATA = [];
-    DATA1 = [];
+    DATE_TIME = {
+        dateWR: [],
+        timeWR: []
+
+    };
   constructor(
     private kalimatiService: KalimatiService
 
   ) { }
 
   ngOnInit() {
-      this.getData();
+      this.getDataRetail();
+        this.getDateTime();
   }
 
-  getData(){
+  getDataRetail(){
       this.kalimatiService.getVegetablesfromService()
       .subscribe(
-          data=>{this.DATA = data,console.log(data)},
+          data=>{this.DATA = data},
           err=>console.log(err),
-          ()=> console.log(this.DATA)
+          ()=> console.log()
     );
-    this.kalimatiService.getDataFromMLab()
-    .subscribe(
-        data=>{this.DATA1 = data},
-        err=>console.log(err),
-        ()=> console.log(this.DATA1)
-    );
+  
+  }
+  getDateTime(){
+    this.kalimatiService.getDateTimeUpdate()
+        .subscribe(
+            data=> this.DATE_TIME = data,
+            err => console.log(err),
+            ()=> console.log(this.DATE_TIME, this.DATE_TIME.dateWR[1])
+        )
   }
  
 }
