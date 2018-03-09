@@ -60,8 +60,8 @@ const getDate = (url)=>{
             });
          
             resolve({
-                date: date,
-                time: time
+                dateWR: date,
+                timeWR: time
             });
 
         });
