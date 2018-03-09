@@ -7,4 +7,4 @@ Frontend Ui server: https://kalimati-tarkari-angular.firebaseapp.com <i>using an
 
 # Source code for ionic mobile app:
 https://github.com/samlimbu/kalimatiAPI/tree/master/ionic <i>using ionic</i>
-<img src="https://raw.githubusercontent.com/samlimbu/kalimatiAPI/master/ionic%20sample.png" alt="">
+<img src="https://raw.githubusercontent.com/samlimbu/kalimatiAPI/master/ionic%20sample.png" alt="" style="width:70%; height=70%">
