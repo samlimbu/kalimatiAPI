@@ -1,0 +1,18 @@
+.list-header{
+    border:1px solid slategrey;
+    font-style: bold;
+    font-size: 120%;
+}
+.column-1{
+    min-width: 33.33333%;
+}
+
+.list-header, .list{
+    padding: 2%;
+}
+
+.list{
+    border-bottom: .5px soild rgb(187, 187, 187);
+    border-top: .5px solid rgb(187, 187, 187);
+    font-size: 120%;
+}

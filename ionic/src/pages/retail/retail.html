@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Retail Prices: Kalimati Market</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div *ngIf="DATE_TIME && RETAIL_DATA">
+    <ion-list>Last Updated: {{DATE_TIME.dateWR[1]}} / {{DATE_TIME.timeWR[1]}}</ion-list>
+
+    <button ion-button (click)="updateData()">Update</button>
+
+    <ion-grid>
+        
+            <ion-row class="list-header">
+                <ion-col class="column-1">कृषि उपज</ion-col>
+                <ion-col>ईकाइ</ion-col>
+                <ion-col>न्यूनतम</ion-col>
+                <ion-col>अधिकतम</ion-col>
+                <ion-col>औसत</ion-col>
+            </ion-row>
+
+            <ion-row class="list" *ngFor="let item of RETAIL_DATA">
+                <ion-col class="column-1">{{item[0]}}</ion-col>
+                <ion-col>{{item[1]}}</ion-col>
+                <ion-col>{{item[2]}}</ion-col>
+                <ion-col>{{item[3]}}</ion-col>
+                <ion-col>{{item[4]}}</ion-col>
+            </ion-row>
+     
+    </ion-grid>
+
+</div>
+
+</ion-content>
