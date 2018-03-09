@@ -25,7 +25,30 @@ app.get('/', (request, response) => {
 	    });
 
 });
-    
+app.get('/retail', (request, response) => {
+	console.log('loading data');
+	Data.retail().then((dataRetail)=>{
+		    console.log('fetched data');
+	    	response.json(dataRetail);
+		   	
+
+	    }).catch((err)=>{
+	    	console.log(err);
+	    });
+
+});    
+app.get('/wholesale', (request, response) => {
+	console.log('loading data');
+	Data.wholesale().then((dataWholesale)=>{
+		    console.log('fetched data');
+	    	response.json(dataWholesale);
+		   	
+
+	    }).catch((err)=>{
+	    	console.log(err);
+	    });
+
+});    
 
 app.listen(port, () => {
 	console.log('Server Up and running on PORT', port);

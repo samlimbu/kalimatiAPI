@@ -9,8 +9,14 @@ const getData = (url)=>{
 	return new Promise((resolve, reject) => {
 		data=[];
         request(url, (err, response, body) => {
-            if(err)
+            if(err){
                 return reject(err);
+            }
+             
+              if (response.statusCode !== 200) {
+                return reject(new Error(body))
+            };
+
             let $ = cheerio.load(body);
             $('tr').each(function() {
                 let temp = [];
